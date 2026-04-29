@@ -9,6 +9,14 @@ from src.analyser import (
     sector_market_cap_stats,
     top_companies_by_market_cap
 )
+from src.visualiser import (
+    plot_companies_per_sector,
+    plot_avg_market_cap_per_sector,
+    plot_market_cap_distribution,
+    plot_top_companies,
+    plot_price_vs_earnings
+)
+
 
 # Load
 df_raw = load_financials()
@@ -34,3 +42,19 @@ print(sector_market_cap_stats(df))
 
 print("\n=== TOP 10 COMPANIES BY MARKET CAP ===")
 print(top_companies_by_market_cap(df))
+
+# ── Analyse ────────────────────────────────────────────────────────────────
+counts      = sector_company_count(df)
+avg_cap     = sector_avg_market_cap(df)
+top_cos     = top_companies_by_market_cap(df)
+
+# ── Visualise ──────────────────────────────────────────────────────────────
+
+print("\nGenerating charts...")
+plot_companies_per_sector(counts)
+plot_avg_market_cap_per_sector(avg_cap)
+plot_market_cap_distribution(df)
+plot_top_companies(top_cos)
+plot_price_vs_earnings(df)
+
+
