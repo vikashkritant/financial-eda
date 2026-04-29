@@ -16,6 +16,7 @@ from src.visualiser import (
     plot_top_companies,
     plot_price_vs_earnings
 )
+from src.report_builder import build_report
 
 
 # Load
@@ -56,5 +57,9 @@ plot_avg_market_cap_per_sector(avg_cap)
 plot_market_cap_distribution(df)
 plot_top_companies(top_cos)
 plot_price_vs_earnings(df)
+
+# ── Build Report ───────────────────────────────────────────────────────────
+print("\nBuilding HTML report...")
+build_report(df)
 
 
