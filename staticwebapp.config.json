@@ -1,0 +1,15 @@
+{
+  "navigationFallback": {
+    "rewrite": "/report/index.html"
+  },
+  "routes": [
+    {
+      "route": "/",
+      "rewrite": "/report/index.html"
+    }
+  ],
+  "mimeTypes": {
+    ".png": "image/png",
+    ".html": "text/html"
+  }
+}
